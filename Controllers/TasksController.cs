@@ -28,7 +28,7 @@ namespace TaskManagement.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            _logger.LogInformation("Fetching all tasks");
+            _logger.LogInformation("Fetching all records");
 
             var tasks = await _service.GetAllAsync();
 
