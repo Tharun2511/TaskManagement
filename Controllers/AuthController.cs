@@ -38,7 +38,7 @@ namespace TaskManagement.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return Ok("User registered successfully");
+            return Ok("Users registered successfully");
         }
         private string GenerateToken(User user)
         {
