@@ -1,1 +1,2 @@
-// Githib file check
+// Githib file check.
+//Checking merge conflicts

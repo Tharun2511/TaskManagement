@@ -1,0 +1,19 @@
+﻿@model IEnumerable<TaskManagement.Models.TaskItem>
+
+<h1>Tasks (Admin)</h1>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var task in Model)
+    {
+        <tr>
+            <td>@task.Id</td>
+            <td>@task.Title</td>
+        </tr>
+    }
+</table>

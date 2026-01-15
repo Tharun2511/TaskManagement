@@ -21,7 +21,7 @@ namespace TaskManagement
             builder.Services.AddScoped<ITaskService, TaskService>();
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddControllers();
+            builder.Services.AddControllersWithViews();
 
 
             builder.Services.AddDbContext<AppDbContext>(options =>
@@ -88,7 +88,7 @@ namespace TaskManagement
 
             var app = builder.Build();
             app.UseSwagger();
-            app.UseMiddleware<ExceptionMiddleware>();
+          //  app.UseMiddleware<ExceptionMiddleware>();
 
 
             if (app.Environment.IsDevelopment())
@@ -105,6 +105,10 @@ namespace TaskManagement
 
 
             app.MapControllers();
+            app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
             app.Run();
         }
